@@ -1,0 +1,39 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+
+  &-fd-c {
+    flex-direction: column;
+  }
+}
+
+.card {
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
+}
