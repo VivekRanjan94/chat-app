@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+// import Profile from './Profile'
 
 import { useAuth } from '../contexts/AuthContext'
-import { SocketProvider } from '../contexts/SocketProvider'
 
 export default function Main() {
   const { loggedInUser } = useAuth()
 
-  return (
-    <SocketProvider id={loggedInUser.id}>
-      <div>
-        <Link to='/profile'>Profile</Link>
-      </div>
-    </SocketProvider>
-  )
+  useEffect(() => {
+    console.log(loggedInUser)
+  }, [loggedInUser])
+
+  return <Link to='/profile'>Profile</Link>
 }

@@ -1,9 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { User } from '../classes/User'
 import { useAuth } from '../contexts/AuthContext'
-import { database } from '../firebase'
-import { v4 as uuidV4 } from 'uuid'
 
 export default function Signup() {
   const [error, setError] = useState('')
@@ -26,9 +23,6 @@ export default function Signup() {
       setError('')
       setIsLoading(true)
       await signup(emailRef.current.value, passwordRef.current.value)
-      database.users.add(
-        new User(nameRef.current.value, emailRef.current.value, uuidV4())
-      )
       history.push('/')
     } catch {
       setError('Failed to create account')

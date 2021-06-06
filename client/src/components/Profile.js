@@ -23,7 +23,6 @@ export default function Main() {
         <span>Profile</span>
         {error && <div className='error'>{error}</div>}
         <span>Email: {loggedInUser.email}</span>
-        <span>Name: {loggedInUser.displayName}</span>
         <Link to='/update-profile'>Update Profile</Link>
       </div>
       <div className='redirect-login'>
