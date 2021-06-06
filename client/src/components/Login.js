@@ -21,8 +21,6 @@ export default function Login() {
     } catch {
       setError('Failed to log in')
     }
-
-    setIsLoading(false)
   }
 
   return (
@@ -33,11 +31,11 @@ export default function Login() {
 
         <form onSubmit={handleSubmit}>
           <div>
-            <span>Email</span>
+            <label>Email</label>
             <input type='email' required ref={emailRef} />
           </div>
           <div>
-            <span>Password</span>
+            <label>Password</label>
             <input type='password' required ref={passwordRef} />
           </div>
           <button disabled={isLoading} type='submit' className='btn'>
